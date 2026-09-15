@@ -1,0 +1,459 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111827;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+  height: 34px;
+  background: #0b1821;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5%;
+  font-size: 12px;
+}
+
+.top-bar-left {
+  font-weight: 500;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e5e7eb;
+}
+
+.top-bar-right span {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.top-bar-right span:hover {
+  color: #16c7b7;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 78px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 5%;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #eef1f3;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  box-shadow: 0 3px 15px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 205px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0b1821;
+  color: white;
+
+  border-radius: 11px;
+
+  font-size: 20px;
+
+  box-shadow: 0 5px 14px rgba(11, 24, 33, 0.15);
+}
+
+.logo-text h2 {
+  font-size: 23px;
+  line-height: 22px;
+  letter-spacing: -0.7px;
+  color: #101820;
+}
+
+.logo-text h2 span {
+  color: #10bfae;
+}
+
+.logo-text p {
+  margin-top: 3px;
+
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+
+  color: #7b8490;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  margin-left: 35px;
+}
+
+.nav-links a {
+  position: relative;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #303943;
+
+  padding: 30px 0;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #10bfae;
+}
+
+.nav-links a.active {
+  color: #10bfae;
+}
+
+.nav-links a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 19px;
+
+  height: 2px;
+
+  background: #10bfae;
+  border-radius: 10px;
+}
+
+/* Sale link */
+
+.nav-links a:last-child {
+  color: #e5484d;
+}
+
+.nav-links a:last-child:hover {
+  color: #c9363b;
+}
+
+/* =========================
+   NAV ACTIONS
+========================= */
+
+.nav-actions {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+  width: 230px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  background: #f7f9fa;
+
+  border: 1px solid #e5e9ed;
+  border-radius: 22px;
+
+  padding-left: 16px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.search-box:focus-within {
+  background: #ffffff;
+  border-color: #10bfae;
+
+  box-shadow: 0 0 0 3px rgba(16, 191, 174, 0.09);
+}
+
+.search-box input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 12px;
+  color: #111827;
+}
+
+.search-box input::placeholder {
+  color: #9ca3af;
+}
+
+.search-box button {
+  width: 42px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.search-box svg {
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+  stroke: #6b7280;
+  stroke-width: 1.8;
+
+  transition: stroke 0.2s ease;
+}
+
+.search-box button:hover svg {
+  stroke: #10bfae;
+}
+
+/* =========================
+   ICON BUTTONS
+========================= */
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: #f1fbfa;
+  transform: translateY(-1px);
+}
+
+.icon-btn svg {
+  width: 21px;
+  height: 21px;
+
+  fill: none;
+  stroke: #17212b;
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =========================
+   CART COUNT
+========================= */
+
+.cart-count {
+  position: absolute;
+
+  top: 1px;
+  right: 0;
+
+  min-width: 17px;
+  height: 17px;
+
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #10bfae;
+  color: #ffffff;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  border: 2px solid #ffffff;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  min-height: calc(100vh - 112px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #6b7280;
+  font-size: 17px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+  .nav-links {
+    gap: 18px;
+    margin-left: 15px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .search-box {
+    width: 180px;
+  }
+
+  .logo {
+    min-width: 175px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .search-box {
+    width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .top-bar {
+    padding: 0 15px;
+  }
+
+  .top-bar-right {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0 15px;
+    height: 70px;
+  }
+
+  .logo {
+    min-width: auto;
+  }
+
+  .logo-text h2 {
+    font-size: 20px;
+  }
+
+  .search-box {
+    width: 40px;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .search-box input {
+    display: none;
+  }
+
+  .search-box button {
+    width: 40px;
+  }
+
+  .icon-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .content h1 {
+    font-size: 30px;
+  }
+}

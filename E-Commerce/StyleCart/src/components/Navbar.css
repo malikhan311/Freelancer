@@ -1,0 +1,1862 @@
+/* ============================================================
+   STYLECART PREMIUM NAVBAR
+   ============================================================
+   Standalone stylesheet for Navbar.jsx
+   No external CSS framework required.
+   ============================================================ */
+
+/* ============================================================
+   01. RESET + TOKENS
+   ============================================================ */
+
+:root {
+  --sc-ink: #0b1821;
+  --sc-ink-soft: #24313a;
+  --sc-text: #27323a;
+  --sc-muted: #7a8791;
+  --sc-subtle: #a2adb5;
+  --sc-border: #e8edf0;
+  --sc-border-strong: #d9e1e5;
+  --sc-surface: #ffffff;
+  --sc-surface-soft: #f7f9fa;
+  --sc-surface-mint: #effaf8;
+  --sc-primary: #10bfae;
+  --sc-primary-dark: #079f91;
+  --sc-primary-soft: rgba(16, 191, 174, 0.1);
+  --sc-sale: #e5484d;
+  --sc-sale-soft: #fff0f1;
+  --sc-shadow-xs: 0 2px 8px rgba(11, 24, 33, 0.04);
+  --sc-shadow-sm: 0 8px 25px rgba(11, 24, 33, 0.08);
+  --sc-shadow-md: 0 16px 45px rgba(11, 24, 33, 0.12);
+  --sc-radius-sm: 8px;
+  --sc-radius-md: 12px;
+  --sc-radius-lg: 16px;
+  --sc-radius-xl: 20px;
+  --sc-header-height: 78px;
+  --sc-promo-height: 34px;
+  --sc-max-width: 1440px;
+  --sc-transition: 180ms ease;
+  --sc-transition-slow: 260ms ease;
+}
+
+.sc-navbar-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.sc-navbar-wrapper *,
+.sc-navbar-wrapper *::before,
+.sc-navbar-wrapper *::after {
+  box-sizing: border-box;
+}
+
+.sc-navbar-wrapper button,
+.sc-navbar-wrapper input {
+  font: inherit;
+}
+
+.sc-navbar-wrapper button {
+  border: 0;
+}
+
+.sc-navbar-wrapper a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sc-navbar-wrapper ul,
+.sc-navbar-wrapper ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sc-navbar-wrapper svg {
+  display: block;
+}
+
+.sc-navbar-wrapper .sc-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
+}
+
+.sc-navbar-wrapper .sc-icon-small {
+  stroke-width: 1.75;
+}
+
+.sc-mobile-lock {
+  overflow: hidden;
+}
+
+/* ============================================================
+   02. PROMO BAR
+   ============================================================ */
+
+.sc-promo-bar {
+  width: 100%;
+  height: var(--sc-promo-height);
+  color: #ffffff;
+  background: var(--sc-ink);
+  position: relative;
+  z-index: 100;
+}
+
+.sc-promo-inner {
+  width: min(100% - 48px, var(--sc-max-width));
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sc-promo-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.sc-promo-message strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.sc-promo-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-primary);
+}
+
+.sc-promo-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.sc-promo-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color var(--sc-transition);
+}
+
+.sc-promo-links a:hover {
+  color: #ffffff;
+}
+
+.sc-promo-divider {
+  width: 1px;
+  height: 11px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sc-currency-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.86);
+  background: transparent;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.sc-currency-symbol {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-primary);
+  border: 1px solid rgba(16, 191, 174, 0.6);
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.sc-currency-button .sc-chevron {
+  transition: transform var(--sc-transition);
+}
+
+.sc-currency-button:hover {
+  color: #ffffff;
+}
+
+.sc-currency-button:hover .sc-chevron {
+  transform: translateY(2px);
+}
+
+/* ============================================================
+   03. MAIN HEADER
+   ============================================================ */
+
+.sc-main-header {
+  position: relative;
+  width: 100%;
+  height: var(--sc-header-height);
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid var(--sc-border);
+  transition:
+    background var(--sc-transition-slow),
+    box-shadow var(--sc-transition-slow),
+    height var(--sc-transition-slow);
+}
+
+.sc-navbar-wrapper.is-scrolled .sc-main-header {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 30px rgba(11, 24, 33, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.sc-header-inner {
+  width: min(100% - 48px, var(--sc-max-width));
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================================
+   04. BRAND
+   ============================================================ */
+
+.sc-brand {
+  min-width: 205px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--sc-ink);
+  flex: 0 0 auto;
+}
+
+.sc-logo-mark {
+  width: 43px;
+  height: 43px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: var(--sc-ink);
+  border-radius: 12px;
+  box-shadow: 0 7px 18px rgba(11, 24, 33, 0.16);
+  transition:
+    transform var(--sc-transition),
+    box-shadow var(--sc-transition);
+}
+
+.sc-logo-mark::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.sc-logo-mark:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(11, 24, 33, 0.2);
+}
+
+.sc-logo-mark-dot {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  background: var(--sc-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(16, 191, 174, 0.12);
+}
+
+.sc-brand-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.sc-brand-name {
+  color: var(--sc-ink);
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.8px;
+}
+
+.sc-brand-name span {
+  color: var(--sc-primary);
+}
+
+.sc-brand-tagline {
+  margin-top: 4px;
+  color: var(--sc-muted);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sc-brand-tagline i {
+  color: var(--sc-primary);
+  font-style: normal;
+  margin: 0 2px;
+}
+
+/* ============================================================
+   05. DESKTOP NAVIGATION
+   ============================================================ */
+
+.sc-desktop-nav {
+  height: 100%;
+  margin-left: 32px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sc-nav-link {
+  position: relative;
+  height: 100%;
+  padding: 0 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: var(--sc-text);
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition:
+    color var(--sc-transition),
+    background var(--sc-transition);
+}
+
+.sc-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 15px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--sc-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--sc-transition);
+}
+
+.sc-nav-link:hover {
+  color: var(--sc-primary-dark);
+}
+
+.sc-nav-link:hover::after,
+.sc-nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.sc-nav-link.active {
+  color: var(--sc-primary-dark);
+}
+
+.sc-nav-link .sc-chevron {
+  color: currentColor;
+  transition: transform var(--sc-transition);
+}
+
+.sc-nav-link:hover .sc-chevron {
+  transform: translateY(2px);
+}
+
+.sc-nav-link.sale-link {
+  color: var(--sc-sale);
+}
+
+.sc-nav-link.sale-link:hover {
+  color: #c93b40;
+}
+
+.sc-nav-link.sale-link::after {
+  background: var(--sc-sale);
+}
+
+/* ============================================================
+   06. ACTION AREA
+   ============================================================ */
+
+.sc-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sc-search {
+  width: 238px;
+  height: 40px;
+  margin-right: 3px;
+  padding: 0 8px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #7d8992;
+  background: var(--sc-surface-soft);
+  border: 1px solid var(--sc-border);
+  border-radius: 22px;
+  transition:
+    background var(--sc-transition),
+    border-color var(--sc-transition),
+    box-shadow var(--sc-transition),
+    width var(--sc-transition);
+}
+
+.sc-search:focus-within {
+  width: 260px;
+  background: #ffffff;
+  border-color: rgba(16, 191, 174, 0.7);
+  box-shadow: 0 0 0 3px rgba(16, 191, 174, 0.08);
+}
+
+.sc-search .sc-icon {
+  color: #74818a;
+  transition: color var(--sc-transition);
+}
+
+.sc-search:focus-within .sc-icon {
+  color: var(--sc-primary);
+}
+
+.sc-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  color: var(--sc-text);
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.sc-search input::placeholder {
+  color: #9ca7ae;
+}
+
+.sc-search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.sc-search kbd {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  color: #9ba5ab;
+  background: #ffffff;
+  border: 1px solid #e1e6e9;
+  border-radius: 5px;
+  font-size: 10px;
+  font-family: inherit;
+}
+
+/* ============================================================
+   07. ACTION BUTTONS
+   ============================================================ */
+
+.sc-action-button {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-ink);
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    color var(--sc-transition),
+    background var(--sc-transition),
+    transform var(--sc-transition);
+}
+
+.sc-action-button:hover {
+  color: var(--sc-primary-dark);
+  background: var(--sc-primary-soft);
+  transform: translateY(-1px);
+}
+
+.sc-action-button.is-active {
+  color: var(--sc-primary-dark);
+  background: var(--sc-primary-soft);
+}
+
+.sc-action-button .sc-icon {
+  transition: transform var(--sc-transition);
+}
+
+.sc-action-button:hover .sc-icon {
+  transform: scale(1.04);
+}
+
+.sc-badge {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: var(--sc-primary);
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 2px 5px rgba(16, 191, 174, 0.25);
+}
+
+/* ============================================================
+   08. ACCOUNT WRAPPER
+   ============================================================ */
+
+.sc-account-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sc-account-dropdown {
+  width: 305px;
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  padding: 10px;
+  color: var(--sc-text);
+  background: #ffffff;
+  border: 1px solid var(--sc-border);
+  border-radius: 16px;
+  box-shadow: var(--sc-shadow-md);
+  animation: sc-dropdown-in 180ms ease both;
+}
+
+.sc-account-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 14px;
+  width: 13px;
+  height: 13px;
+  background: #ffffff;
+  border-left: 1px solid var(--sc-border);
+  border-top: 1px solid var(--sc-border);
+  transform: rotate(45deg);
+}
+
+.sc-account-heading {
+  min-height: 70px;
+  padding: 11px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--sc-surface-soft);
+  border-radius: 11px;
+}
+
+.sc-account-avatar {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-primary-dark);
+  background: #ffffff;
+  border: 1px solid var(--sc-border);
+  border-radius: 50%;
+}
+
+.sc-account-heading > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-account-heading strong {
+  color: var(--sc-ink);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.sc-account-heading span {
+  margin-top: 3px;
+  color: var(--sc-muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.sc-account-list {
+  padding-top: 6px;
+}
+
+.sc-account-item {
+  min-height: 43px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--sc-text);
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    color var(--sc-transition),
+    background var(--sc-transition);
+}
+
+.sc-account-item > .sc-icon:first-child {
+  color: #77848c;
+}
+
+.sc-account-item .sc-chevron {
+  margin-left: auto;
+  color: #a4adb3;
+}
+
+.sc-account-item:hover {
+  color: var(--sc-primary-dark);
+  background: var(--sc-surface-mint);
+}
+
+.sc-account-item:hover > .sc-icon:first-child {
+  color: var(--sc-primary);
+}
+
+/* ============================================================
+   09. MEGA MENU
+   ============================================================ */
+
+.sc-mega-menu {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: calc(var(--sc-promo-height) + var(--sc-header-height));
+  padding: 12px 24px 20px;
+  background: rgba(255, 255, 255, 0.985);
+  border-bottom: 1px solid var(--sc-border);
+  box-shadow: 0 18px 45px rgba(11, 24, 33, 0.1);
+  animation: sc-mega-in 190ms ease both;
+  z-index: 90;
+}
+
+.sc-mega-inner {
+  width: min(100%, 1160px);
+  min-height: 250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 245px 1fr;
+  gap: 38px;
+}
+
+.sc-mega-feature {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  color: #ffffff;
+  background: linear-gradient(145deg, #0b1821 0%, #152731 100%);
+  border-radius: 15px;
+}
+
+.sc-mega-feature::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -55px;
+  top: -55px;
+  background: rgba(16, 191, 174, 0.15);
+  border-radius: 50%;
+}
+
+.sc-mega-feature::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: 20px;
+  bottom: -60px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.sc-mega-feature-icon {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-primary);
+  background: rgba(16, 191, 174, 0.12);
+  border: 1px solid rgba(16, 191, 174, 0.2);
+  border-radius: 12px;
+}
+
+.sc-mega-eyebrow {
+  display: block;
+  margin-top: 25px;
+  color: var(--sc-primary);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.sc-mega-feature h3 {
+  position: relative;
+  max-width: 170px;
+  margin: 7px 0 8px;
+  color: #ffffff;
+  font-size: 21px;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+}
+
+.sc-mega-feature p {
+  position: relative;
+  max-width: 190px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.sc-mega-feature-link {
+  position: relative;
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.sc-mega-feature-link .sc-chevron {
+  transition: transform var(--sc-transition);
+}
+
+.sc-mega-feature-link:hover {
+  color: var(--sc-primary);
+}
+
+.sc-mega-feature-link:hover .sc-chevron {
+  transform: translateX(3px);
+}
+
+.sc-mega-columns {
+  padding: 17px 4px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 35px;
+}
+
+.sc-mega-column h4 {
+  margin: 0 0 10px;
+  color: var(--sc-ink);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sc-mega-column h4::after {
+  content: "";
+  width: 25px;
+  height: 2px;
+  margin-top: 6px;
+  display: block;
+  background: var(--sc-primary);
+  border-radius: 99px;
+}
+
+.sc-mega-item {
+  min-height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #68757e;
+  font-size: 11px;
+  font-weight: 550;
+  border-bottom: 1px solid transparent;
+  transition:
+    color var(--sc-transition),
+    padding var(--sc-transition);
+}
+
+.sc-mega-item .sc-chevron {
+  opacity: 0;
+  color: var(--sc-primary);
+  transform: translateX(-4px);
+  transition:
+    opacity var(--sc-transition),
+    transform var(--sc-transition);
+}
+
+.sc-mega-item:hover {
+  padding-left: 4px;
+  color: var(--sc-primary-dark);
+}
+
+.sc-mega-item:hover .sc-chevron {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================================
+   10. MOBILE TOGGLE
+   ============================================================ */
+
+.sc-mobile-toggle {
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-ink);
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    color var(--sc-transition),
+    background var(--sc-transition);
+}
+
+.sc-mobile-toggle:hover {
+  color: var(--sc-primary-dark);
+  background: var(--sc-primary-soft);
+}
+
+/* ============================================================
+   11. MOBILE OVERLAY
+   ============================================================ */
+
+.sc-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1090;
+  background: rgba(4, 13, 18, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition:
+    opacity var(--sc-transition-slow),
+    visibility var(--sc-transition-slow);
+}
+
+.sc-mobile-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ============================================================
+   12. MOBILE DRAWER
+   ============================================================ */
+
+.sc-mobile-drawer {
+  width: min(88vw, 390px);
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  color: var(--sc-text);
+  background: #ffffff;
+  box-shadow: 15px 0 45px rgba(11, 24, 33, 0.18);
+  transform: translateX(-105%);
+  visibility: hidden;
+  transition:
+    transform var(--sc-transition-slow),
+    visibility var(--sc-transition-slow);
+}
+
+.sc-mobile-drawer.visible {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.sc-mobile-drawer-header {
+  min-height: 78px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--sc-border);
+}
+
+.sc-mobile-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.sc-mobile-title .sc-logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+}
+
+.sc-mobile-title > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-mobile-title strong {
+  color: var(--sc-ink);
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.sc-mobile-title strong span {
+  color: var(--sc-primary);
+}
+
+.sc-mobile-title small {
+  margin-top: 4px;
+  color: var(--sc-muted);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+.sc-mobile-close {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-ink);
+  background: var(--sc-surface-soft);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sc-mobile-close:hover {
+  color: var(--sc-primary-dark);
+  background: var(--sc-primary-soft);
+}
+
+.sc-mobile-search-wrap {
+  padding: 14px 18px 7px;
+}
+
+.sc-mobile-search {
+  height: 43px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--sc-muted);
+  background: var(--sc-surface-soft);
+  border: 1px solid var(--sc-border);
+  border-radius: 11px;
+}
+
+.sc-mobile-search:focus-within {
+  color: var(--sc-primary-dark);
+  background: #ffffff;
+  border-color: rgba(16, 191, 174, 0.65);
+  box-shadow: 0 0 0 3px rgba(16, 191, 174, 0.07);
+}
+
+.sc-mobile-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  color: var(--sc-text);
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 12px;
+}
+
+.sc-mobile-search input::placeholder {
+  color: #9ca7ae;
+}
+
+.sc-mobile-nav {
+  padding: 8px 18px 12px;
+}
+
+.sc-mobile-link {
+  min-height: 48px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--sc-text);
+  border-bottom: 1px solid var(--sc-border);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sc-mobile-link.active {
+  color: var(--sc-primary-dark);
+}
+
+.sc-mobile-link.sale {
+  color: var(--sc-sale);
+}
+
+.sc-mobile-sale-pill {
+  padding: 5px 7px;
+  color: var(--sc-sale);
+  background: var(--sc-sale-soft);
+  border-radius: 5px;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.sc-mobile-group {
+  border-bottom: 1px solid var(--sc-border);
+}
+
+.sc-mobile-group-button {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--sc-text);
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sc-mobile-group-button .sc-chevron {
+  transition: transform var(--sc-transition);
+}
+
+.sc-mobile-group.open .sc-mobile-group-button {
+  color: var(--sc-primary-dark);
+}
+
+.sc-mobile-group.open .sc-mobile-group-button .sc-chevron {
+  transform: rotate(180deg);
+}
+
+.sc-mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: max-height var(--sc-transition-slow);
+}
+
+.sc-mobile-group.open .sc-mobile-submenu {
+  max-height: 280px;
+}
+
+.sc-mobile-submenu a {
+  min-height: 34px;
+  padding: 0 8px 0 14px;
+  display: flex;
+  align-items: center;
+  color: var(--sc-muted);
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.sc-mobile-submenu a:hover {
+  color: var(--sc-primary-dark);
+}
+
+.sc-mobile-account-card {
+  margin: 8px 18px;
+  padding: 13px;
+  display: grid;
+  grid-template-columns: 38px 1fr 16px;
+  align-items: center;
+  gap: 9px;
+  background: var(--sc-surface-mint);
+  border: 1px solid rgba(16, 191, 174, 0.14);
+  border-radius: 12px;
+}
+
+.sc-mobile-account-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-primary-dark);
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.sc-mobile-account-card > div:nth-child(2) {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-mobile-account-card strong {
+  color: var(--sc-ink);
+  font-size: 11px;
+}
+
+.sc-mobile-account-card span {
+  margin-top: 3px;
+  color: var(--sc-muted);
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+.sc-mobile-account-card > .sc-chevron {
+  color: var(--sc-primary-dark);
+}
+
+.sc-mobile-quick-actions {
+  margin: 2px 18px 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+
+.sc-mobile-quick-actions a {
+  min-height: 68px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--sc-muted);
+  background: var(--sc-surface-soft);
+  border: 1px solid var(--sc-border);
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.sc-mobile-quick-actions a:hover {
+  color: var(--sc-primary-dark);
+  border-color: rgba(16, 191, 174, 0.3);
+  background: var(--sc-surface-mint);
+}
+
+.sc-mobile-quick-actions b {
+  min-width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: var(--sc-primary);
+  border-radius: 999px;
+  font-size: 7px;
+}
+
+.sc-mobile-footer {
+  margin-top: auto;
+  padding: 17px 18px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  border-top: 1px solid var(--sc-border);
+}
+
+.sc-mobile-footer a {
+  color: var(--sc-muted);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.sc-mobile-footer a:hover {
+  color: var(--sc-primary-dark);
+}
+
+/* ============================================================
+   13. SCREEN READER ONLY
+   ============================================================ */
+
+.sc-sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+
+/* ============================================================
+   14. ANIMATIONS
+   ============================================================ */
+
+@keyframes sc-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sc-mega-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sc-badge-pop {
+  0% {
+    transform: scale(0.75);
+  }
+
+  65% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sc-badge {
+  animation: sc-badge-pop 220ms ease both;
+}
+
+/* ============================================================
+   15. LARGE DESKTOP
+   ============================================================ */
+
+@media (min-width: 1441px) {
+  .sc-promo-inner {
+    width: min(100% - 72px, 1500px);
+  }
+
+  .sc-header-inner {
+    width: min(100% - 72px, 1500px);
+  }
+
+  .sc-brand {
+    min-width: 225px;
+  }
+
+  .sc-desktop-nav {
+    margin-left: 38px;
+    gap: 8px;
+  }
+
+  .sc-nav-link {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+  }
+
+  .sc-search {
+    width: 250px;
+  }
+
+  .sc-search:focus-within {
+    width: 275px;
+  }
+
+  .sc-mega-inner {
+    max-width: 1280px;
+  }
+}
+
+/* ============================================================
+   16. DESKTOP 1200-1440
+   ============================================================ */
+
+@media (max-width: 1280px) and (min-width: 1101px) {
+  .sc-brand {
+    min-width: 185px;
+  }
+
+  .sc-desktop-nav {
+    margin-left: 16px;
+    gap: 0;
+  }
+
+  .sc-nav-link {
+    padding-left: 9px;
+    padding-right: 9px;
+    font-size: 12px;
+  }
+
+  .sc-search {
+    width: 205px;
+  }
+
+  .sc-search:focus-within {
+    width: 225px;
+  }
+
+  .sc-actions {
+    gap: 5px;
+  }
+}
+
+/* ============================================================
+   17. TABLET LANDSCAPE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  :root {
+    --sc-header-height: 72px;
+  }
+
+  .sc-promo-inner {
+    width: min(100% - 30px, var(--sc-max-width));
+  }
+
+  .sc-header-inner {
+    width: min(100% - 30px, var(--sc-max-width));
+  }
+
+  .sc-brand {
+    min-width: 175px;
+  }
+
+  .sc-desktop-nav {
+    margin-left: 8px;
+    gap: 0;
+  }
+
+  .sc-nav-link {
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 11px;
+  }
+
+  .sc-nav-link::after {
+    left: 8px;
+    right: 8px;
+    bottom: 13px;
+  }
+
+  .sc-search {
+    width: 170px;
+    margin-right: 0;
+  }
+
+  .sc-search:focus-within {
+    width: 190px;
+  }
+
+  .sc-search kbd {
+    display: none;
+  }
+
+  .sc-actions {
+    gap: 2px;
+  }
+
+  .sc-action-button {
+    width: 37px;
+    height: 37px;
+  }
+}
+
+/* ============================================================
+   18. TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .sc-desktop-nav {
+    display: none;
+  }
+
+  .sc-search {
+    width: 220px;
+  }
+
+  .sc-search:focus-within {
+    width: 235px;
+  }
+
+  .sc-mobile-toggle {
+    display: inline-flex;
+  }
+
+  .sc-mega-menu {
+    display: none;
+  }
+
+  .sc-account-dropdown {
+    display: none;
+  }
+}
+
+/* ============================================================
+   19. SMALL TABLET / LARGE PHONE
+   ============================================================ */
+
+@media (max-width: 680px) {
+  :root {
+    --sc-promo-height: 31px;
+    --sc-header-height: 66px;
+  }
+
+  .sc-promo-inner {
+    width: calc(100% - 28px);
+  }
+
+  .sc-promo-message {
+    font-size: 10px;
+  }
+
+  .sc-promo-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .sc-promo-links {
+    display: none;
+  }
+
+  .sc-header-inner {
+    width: calc(100% - 24px);
+  }
+
+  .sc-brand {
+    min-width: auto;
+    gap: 8px;
+  }
+
+  .sc-logo-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .sc-brand-name {
+    font-size: 20px;
+  }
+
+  .sc-brand-tagline {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+
+  .sc-actions {
+    gap: 2px;
+  }
+
+  .sc-search {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .sc-search input {
+    display: none;
+  }
+
+  .sc-search:focus-within {
+    width: 38px;
+    border-color: var(--sc-border);
+    box-shadow: none;
+    background: var(--sc-surface-soft);
+  }
+
+  .sc-search kbd {
+    display: none;
+  }
+
+  .sc-search .sc-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sc-action-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .sc-action-button:nth-of-type(1) {
+    display: none;
+  }
+
+  .sc-mobile-toggle {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ============================================================
+   20. PHONE
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .sc-promo-message {
+    justify-content: center;
+    width: 100%;
+    font-size: 9px;
+  }
+
+  .sc-promo-message strong {
+    font-weight: 800;
+  }
+
+  .sc-header-inner {
+    width: calc(100% - 18px);
+  }
+
+  .sc-brand {
+    gap: 7px;
+  }
+
+  .sc-logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .sc-brand-name {
+    font-size: 19px;
+  }
+
+  .sc-brand-tagline {
+    display: none;
+  }
+
+  .sc-actions {
+    gap: 0;
+  }
+
+  .sc-action-button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .sc-mobile-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .sc-badge {
+    top: 0;
+    right: -1px;
+  }
+
+  .sc-mobile-drawer {
+    width: min(91vw, 370px);
+  }
+}
+
+/* ============================================================
+   21. VERY SMALL PHONE
+   ============================================================ */
+
+@media (max-width: 360px) {
+  .sc-header-inner {
+    width: calc(100% - 12px);
+  }
+
+  .sc-brand-name {
+    font-size: 17px;
+  }
+
+  .sc-logo-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .sc-search {
+    width: 34px;
+    height: 34px;
+  }
+
+  .sc-action-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sc-mobile-toggle {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* ============================================================
+   22. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-navbar-wrapper *,
+  .sc-navbar-wrapper *::before,
+  .sc-navbar-wrapper *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ============================================================
+   23. HIGH CONTRAST
+   ============================================================ */
+
+@media (forced-colors: active) {
+  .sc-logo-mark {
+    border: 1px solid CanvasText;
+  }
+
+  .sc-nav-link.active::after {
+    background: Highlight;
+  }
+
+  .sc-action-button:focus-visible,
+  .sc-nav-link:focus-visible,
+  .sc-mobile-link:focus-visible,
+  .sc-mobile-group-button:focus-visible {
+    outline: 2px solid Highlight;
+  }
+}
+
+/* ============================================================
+   24. FOCUS STATES
+   ============================================================ */
+
+.sc-navbar-wrapper a:focus-visible,
+.sc-navbar-wrapper button:focus-visible,
+.sc-navbar-wrapper input:focus-visible {
+  outline: 2px solid rgba(16, 191, 174, 0.8);
+  outline-offset: 2px;
+}
+
+.sc-search input:focus-visible {
+  outline: none;
+}
+
+/* ============================================================
+   25. EXTRA NAV MICRO-INTERACTIONS
+   ============================================================ */
+
+.sc-nav-link span {
+  position: relative;
+  top: 0;
+  transition: top var(--sc-transition);
+}
+
+.sc-nav-link:hover span {
+  top: -1px;
+}
+
+.sc-action-button:active {
+  transform: scale(0.96);
+}
+
+.sc-mobile-toggle:active {
+  transform: scale(0.96);
+}
+
+.sc-mobile-close:active {
+  transform: scale(0.96);
+}
+
+/* ============================================================
+   26. LOGO POLISH
+   ============================================================ */
+
+.sc-brand:hover .sc-logo-mark {
+  box-shadow: 0 10px 24px rgba(11, 24, 33, 0.19);
+}
+
+.sc-brand:hover .sc-brand-name {
+  color: #111f28;
+}
+
+.sc-brand:hover .sc-brand-name span {
+  color: var(--sc-primary-dark);
+}
+
+/* ============================================================
+   27. PROMO POLISH
+   ============================================================ */
+
+.sc-promo-bar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sc-promo-message,
+.sc-promo-links {
+  height: 100%;
+}
+
+/* ============================================================
+   28. NAVBAR LAYERING
+   ============================================================ */
+
+.sc-navbar-wrapper {
+  isolation: isolate;
+}
+
+.sc-main-header {
+  z-index: 50;
+}
+
+.sc-actions {
+  position: relative;
+  z-index: 55;
+}
+
+.sc-desktop-nav {
+  position: relative;
+  z-index: 55;
+}
+
+.sc-mega-menu {
+  z-index: 40;
+}
+
+/* ============================================================
+   29. EMPTY SEARCH STATES
+   ============================================================ */
+
+.sc-search input:placeholder-shown {
+  text-overflow: ellipsis;
+}
+
+.sc-mobile-search input:placeholder-shown {
+  text-overflow: ellipsis;
+}
+
+/* ============================================================
+   30. PRINT
+   ============================================================ */
+
+@media print {
+  .sc-navbar-wrapper {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   31. ADDITIONAL RESPONSIVE REFINEMENTS
+   ============================================================ */
+
+@media (min-width: 901px) {
+  .sc-mobile-drawer,
+  .sc-mobile-overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .sc-desktop-nav {
+    visibility: hidden;
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 680px) {
+  .sc-promo-bar {
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .sc-main-header {
+    box-shadow: 0 4px 18px rgba(11, 24, 33, 0.04);
+  }
+}
+
+/* ============================================================
+   32. EXTRA SAFETY RULES
+   ============================================================ */
+
+.sc-navbar-wrapper img {
+  max-width: 100%;
+}
+
+.sc-navbar-wrapper textarea {
+  font-family: inherit;
+}
+
+.sc-navbar-wrapper [hidden] {
+  display: none !important;
+}
+
+.sc-navbar-wrapper .sc-chevron {
+  flex: 0 0 auto;
+}
+
+.sc-navbar-wrapper .sc-account-item > span {
+  min-width: 0;
+}
+
+.sc-navbar-wrapper .sc-mega-item > span {
+  min-width: 0;
+}
+
+.sc-navbar-wrapper .sc-mobile-link > span:first-child {
+  min-width: 0;
+}
+
+.sc-navbar-wrapper .sc-mobile-quick-actions span {
+  min-width: 0;
+}

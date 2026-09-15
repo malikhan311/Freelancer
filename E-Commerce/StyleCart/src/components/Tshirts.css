@@ -1,0 +1,3148 @@
+
+.tshirt-page {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #f7f7f2;
+
+  color: #151913;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.tshirt-container {
+  width: min(
+    1380px,
+    calc(100% - 80px)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.tshirt-hero {
+  min-height: 760px;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 70% 30%,
+      rgba(201, 221, 187, 0.5),
+      transparent 28%
+    ),
+    #f4f5ee;
+}
+
+
+.tshirt-hero-bg-shape {
+  position: absolute;
+
+  width: 700px;
+
+  height: 700px;
+
+  right: -250px;
+
+  top: -260px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(101, 128, 90, 0.12);
+
+  box-shadow:
+    0 0 0 80px
+      rgba(159, 190, 141, 0.025),
+    0 0 0 160px
+      rgba(159, 190, 141, 0.02);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.tshirt-breadcrumb {
+  position: absolute;
+
+  top: 32px;
+
+  left: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #90978b;
+
+  font-size: 10px;
+
+  letter-spacing: 0.5px;
+}
+
+
+.tshirt-breadcrumb strong {
+  color: #4d5948;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.tshirt-hero-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    0.95fr
+    1.05fr;
+
+  align-items: center;
+
+  gap: 80px;
+
+  padding-top: 45px;
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.tshirt-hero-copy {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.tshirt-hero-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 26px;
+
+  color: #708169;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.8px;
+}
+
+
+.tshirt-hero-eyebrow::before {
+  content: "";
+
+  width: 28px;
+
+  height: 1px;
+
+  background: #8ba47e;
+}
+
+
+.tshirt-hero-copy h1 {
+  margin: 0;
+
+  color: #111510;
+
+  font-size: clamp(
+    65px,
+    7vw,
+    104px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.88;
+
+  letter-spacing: -6px;
+}
+
+
+.tshirt-hero-copy h1 em {
+  color: #718668;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-weight: 400;
+
+  letter-spacing: -5px;
+}
+
+
+.tshirt-hero-copy > p {
+  max-width: 500px;
+
+  margin: 34px 0 0;
+
+  color: #70796c;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.tshirt-hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  margin-top: 35px;
+}
+
+
+.tshirt-primary-button {
+  min-height: 56px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 0 22px 0 27px;
+
+  border-radius: 100px;
+
+  background: #9fbd8e;
+
+  color: #192116;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.tshirt-primary-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: #78986c;
+
+  transform: translateX(-105%);
+
+  transition:
+    transform 0.4s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.tshirt-primary-button:hover::before {
+  transform: translateX(0);
+}
+
+
+.tshirt-primary-button:hover {
+  color: #ffffff;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 16px 35px
+      rgba(79, 105, 68, 0.18);
+}
+
+
+.tshirt-primary-button span {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.tshirt-text-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #566252;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.tshirt-text-button span {
+  color: #7d9970;
+
+  font-size: 15px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.tshirt-text-button:hover {
+  color: #78936d;
+
+  transform: translateX(3px);
+}
+
+
+.tshirt-text-button:hover span {
+  transform:
+    translate(4px, -3px);
+}
+
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.tshirt-hero-stats {
+  display: flex;
+
+  align-items: center;
+
+  gap: 35px;
+
+  margin-top: 65px;
+}
+
+
+.tshirt-hero-stats div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.tshirt-hero-stats strong {
+  color: #2f3d2b;
+
+  font-size: 20px;
+
+  font-weight: 600;
+}
+
+
+.tshirt-hero-stats span {
+  color: #8a9285;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.2px;
+}
+
+
+.tshirt-hero-stats div + div {
+  padding-left: 35px;
+
+  border-left:
+    1px solid
+    rgba(77, 101, 68, 0.15);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.tshirt-hero-visual {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+.tshirt-hero-image-frame {
+  width: 100%;
+
+  height: 620px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius:
+    220px
+    220px
+    20px
+    20px;
+
+  background: #d9dfd2;
+
+  box-shadow:
+    0 35px 80px
+      rgba(57, 76, 51, 0.1);
+}
+
+
+.tshirt-hero-image-frame img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  display: block;
+
+  transition:
+    transform 1s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.tshirt-hero-image-frame:hover img {
+  transform: scale(1.045);
+}
+
+
+.tshirt-hero-image-gradient {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 50%,
+      rgba(20, 27, 19, 0.25)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FLOATING CARD
+========================================================= */
+
+.tshirt-floating-card {
+  position: absolute;
+
+  left: 30px;
+
+  bottom: 30px;
+
+  width: 180px;
+
+  padding: 22px;
+
+  background:
+    rgba(
+      247,
+      247,
+      242,
+      0.9
+    );
+
+  backdrop-filter:
+    blur(15px);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.6);
+
+  box-shadow:
+    0 18px 45px
+      rgba(25, 35, 23, 0.14);
+}
+
+
+.floating-small {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #72836d;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.tshirt-floating-card strong {
+  display: block;
+
+  color: #20281e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+
+.floating-line {
+  display: block;
+
+  width: 100%;
+
+  height: 1px;
+
+  margin: 18px 0;
+
+  background:
+    rgba(75, 98, 66, 0.15);
+}
+
+
+.floating-number {
+  color: #899285;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   COLLECTION
+========================================================= */
+
+.tshirt-collection {
+  padding: 115px 0 120px;
+
+  background: #f7f7f2;
+}
+
+
+/* =========================================================
+   COLLECTION HEADER
+========================================================= */
+
+.tshirt-collection-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 60px;
+}
+
+
+.collection-eyebrow {
+  display: block;
+
+  margin-bottom: 17px;
+
+  color: #819078;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.8px;
+}
+
+
+.tshirt-collection-header h2 {
+  margin: 0;
+
+  color: #181d16;
+
+  font-size: clamp(
+    42px,
+    5vw,
+    68px
+  );
+
+  font-weight: 500;
+
+  letter-spacing: -3px;
+}
+
+
+.tshirt-collection-header p {
+  margin: 16px 0 0;
+
+  color: #81897d;
+
+  font-size: 13px;
+}
+
+
+.collection-count {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 9px;
+
+  color: #81897c;
+}
+
+
+.collection-count strong {
+  color: #3e4c38;
+
+  font-size: 35px;
+
+  font-weight: 500;
+
+  letter-spacing: -1px;
+}
+
+
+.collection-count span {
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.4px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.tshirt-toolbar {
+  min-height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding:
+    10px 0;
+
+  border-top:
+    1px solid
+    rgba(73, 94, 64, 0.13);
+
+  border-bottom:
+    1px solid
+    rgba(73, 94, 64, 0.13);
+}
+
+
+.tshirt-filter-list {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  flex-wrap: wrap;
+}
+
+
+.tshirt-filter-button {
+  min-height: 36px;
+
+  padding: 0 15px;
+
+  border: 1px solid transparent;
+
+  border-radius: 100px;
+
+  background: transparent;
+
+  color: #81897e;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.tshirt-filter-button:hover {
+  color: #50614a;
+
+  background: #edf2e9;
+
+  transform: translateY(-2px);
+}
+
+
+.tshirt-filter-button.active {
+  color: #263322;
+
+  background: #dce8d5;
+
+  border-color:
+    rgba(91, 117, 78, 0.1);
+}
+
+
+.filter-dot {
+  margin-left: 5px;
+
+  color: #79936d;
+}
+
+
+/* =========================================================
+   TOOLBAR RIGHT
+========================================================= */
+
+.tshirt-toolbar-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.tshirt-search {
+  height: 39px;
+
+  min-width: 190px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 14px;
+
+  border:
+    1px solid
+    rgba(74, 97, 65, 0.13);
+
+  border-radius: 100px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.tshirt-search:focus-within {
+  border-color: #9db590;
+
+  box-shadow:
+    0 0 0 4px
+      rgba(159, 190, 141, 0.1);
+}
+
+
+.tshirt-search > span {
+  color: #788674;
+
+  font-size: 18px;
+}
+
+
+.tshirt-search input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #30382d;
+
+  font-family: inherit;
+
+  font-size: 10px;
+}
+
+
+.tshirt-search input::placeholder {
+  color: #9ca39a;
+}
+
+
+.tshirt-sort {
+  height: 39px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 13px;
+
+  border:
+    1px solid
+    rgba(74, 97, 65, 0.13);
+
+  border-radius: 100px;
+
+  background: #ffffff;
+}
+
+
+.tshirt-sort span {
+  color: #9a9f97;
+
+  font-size: 9px;
+}
+
+
+.tshirt-sort select {
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #485442;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.tshirt-product-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 38px 18px;
+
+  margin-top: 48px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.tshirt-product-card {
+  min-width: 0;
+
+  position: relative;
+}
+
+
+.tshirt-product-image-wrap {
+  height: 480px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #e8ebe3;
+}
+
+
+.tshirt-product-image {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.tshirt-product-card:hover
+.tshirt-product-image {
+  transform: scale(1.045);
+}
+
+
+.tshirt-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05),
+      transparent 30%,
+      rgba(0, 0, 0, 0.2)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.tshirt-product-badge {
+  position: absolute;
+
+  top: 16px;
+
+  left: 16px;
+
+  padding:
+    8px 11px;
+
+  background:
+    rgba(
+      247,
+      247,
+      242,
+      0.9
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  color: #4f6049;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   WISHLIST
+========================================================= */
+
+.tshirt-wishlist {
+  width: 42px;
+
+  height: 42px;
+
+  position: absolute;
+
+  top: 13px;
+
+  right: 13px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      247,
+      247,
+      242,
+      0.88
+    );
+
+  color: #566151;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  z-index: 3;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.tshirt-wishlist:hover {
+  transform:
+    translateY(-3px)
+    scale(1.06);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 9px 22px
+      rgba(38, 51, 32, 0.13);
+}
+
+
+.tshirt-wishlist.active {
+  background: #b6cca9;
+
+  color: #34462e;
+}
+
+
+/* =========================================================
+   QUICK VIEW
+========================================================= */
+
+.tshirt-quick-view {
+  position: absolute;
+
+  left: 14px;
+
+  right: 14px;
+
+  bottom: 14px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 17px;
+
+  border: none;
+
+  background:
+    rgba(
+      247,
+      247,
+      242,
+      0.93
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  color: #293326;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transform:
+    translateY(15px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    background 0.3s ease;
+}
+
+
+.tshirt-product-card:hover
+.tshirt-quick-view {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+.tshirt-quick-view:hover {
+  background: #ffffff;
+}
+
+
+.tshirt-quick-view span:last-child {
+  color: #78936c;
+
+  font-size: 15px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.tshirt-quick-view:hover
+span:last-child {
+  transform:
+    translate(4px, -3px);
+}
+
+
+/* =========================================================
+   PRODUCT CONTENT
+========================================================= */
+
+.tshirt-product-content {
+  padding-top: 19px;
+}
+
+
+.tshirt-product-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.tshirt-product-category {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #92998e;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+
+.tshirt-product-name {
+  margin: 0;
+
+  color: #252c23;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+.tshirt-product-rating {
+  flex-shrink: 0;
+
+  color: #82917a;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+.tshirt-product-options {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 15px;
+}
+
+
+.tshirt-color-options {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.tshirt-color {
+  width: 17px;
+
+  height: 17px;
+
+  padding: 0;
+
+  border:
+    2px solid
+    transparent;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 1px
+      rgba(45, 55, 41, 0.1);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.tshirt-color:hover {
+  transform: scale(1.2);
+}
+
+
+.tshirt-color.selected {
+  box-shadow:
+    0 0 0 1px #6e8865,
+    0 0 0 3px #f7f7f2;
+}
+
+
+.tshirt-color-count {
+  color: #a0a59d;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.tshirt-price-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 17px;
+}
+
+
+.tshirt-prices {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 8px;
+}
+
+
+.tshirt-current-price {
+  color: #293426;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+.tshirt-old-price {
+  color: #a2a59f;
+
+  font-size: 10px;
+
+  text-decoration:
+    line-through;
+}
+
+
+.tshirt-save {
+  color: #78916d;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.tshirt-add-button {
+  width: 100%;
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 17px;
+
+  padding: 0 17px;
+
+  border:
+    1px solid
+    rgba(74, 97, 65, 0.17);
+
+  border-radius: 100px;
+
+  background: transparent;
+
+  color: #455341;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.tshirt-add-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: #a7c397;
+
+  transform:
+    translateX(-105%);
+
+  transition:
+    transform 0.4s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.tshirt-add-button:hover::before {
+  transform:
+    translateX(0);
+}
+
+
+.tshirt-add-button:hover {
+  color: #182115;
+
+  border-color: #a7c397;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px
+      rgba(83, 108, 72, 0.12);
+}
+
+
+.tshirt-add-button span {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.tshirt-add-arrow {
+  width: 27px;
+
+  height: 27px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(73, 94, 64, 0.18);
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.tshirt-add-button:hover
+.tshirt-add-arrow {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.tshirt-empty-state {
+  min-height: 360px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+}
+
+
+.empty-icon {
+  width: 65px;
+
+  height: 65px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 22px;
+
+  border:
+    1px solid
+    rgba(75, 99, 65, 0.15);
+
+  border-radius: 50%;
+
+  color: #82957b;
+
+  font-size: 24px;
+}
+
+
+.tshirt-empty-state h3 {
+  margin: 0;
+
+  color: #303a2d;
+
+  font-size: 25px;
+
+  font-weight: 500;
+}
+
+
+.tshirt-empty-state p {
+  margin: 10px 0 20px;
+
+  color: #8a9285;
+
+  font-size: 12px;
+}
+
+
+.tshirt-empty-state button {
+  border: none;
+
+  background: transparent;
+
+  color: #71896a;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE FILTER
+========================================================= */
+
+.mobile-filter-trigger {
+  display: none;
+}
+
+
+.mobile-filter-panel {
+  display: none;
+}
+
+
+/* =========================================================
+   EDITORIAL
+========================================================= */
+
+.tshirt-editorial {
+  padding: 0 0 120px;
+
+  background: #f7f7f2;
+}
+
+
+.editorial-card {
+  min-height: 550px;
+
+  display: grid;
+
+  grid-template-columns:
+    0.9fr
+    1.1fr;
+
+  overflow: hidden;
+
+  background: #dce8d5;
+}
+
+
+.editorial-content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 70px;
+}
+
+
+.editorial-content > span {
+  margin-bottom: 22px;
+
+  color: #71886a;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.4px;
+}
+
+
+.editorial-content h2 {
+  margin: 0;
+
+  color: #293426;
+
+  font-size: clamp(
+    45px,
+    5vw,
+    70px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.94;
+
+  letter-spacing: -3px;
+}
+
+
+.editorial-content h2 em {
+  color: #6f8767;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-weight: 400;
+}
+
+
+.editorial-content p {
+  max-width: 360px;
+
+  margin: 25px 0 30px;
+
+  color: #687564;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+.editorial-button {
+  width: max-content;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #3d4e38;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.editorial-button span:last-child {
+  width: 34px;
+
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(62, 82, 55, 0.22);
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.editorial-button:hover
+span:last-child {
+  background: #a7c397;
+
+  transform:
+    translate(4px, -3px);
+}
+
+
+.editorial-image {
+  min-height: 550px;
+
+  overflow: hidden;
+}
+
+
+.editorial-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 1s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.editorial-card:hover
+.editorial-image img {
+  transform: scale(1.035);
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.tshirt-values {
+  padding: 110px 0;
+
+  background: #eef2ea;
+
+  border-top:
+    1px solid
+    rgba(72, 95, 64, 0.08);
+
+  border-bottom:
+    1px solid
+    rgba(72, 95, 64, 0.08);
+}
+
+
+.tshirt-values-header > span {
+  color: #7d9177;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+
+.tshirt-values-header h2 {
+  margin: 20px 0 65px;
+
+  color: #293426;
+
+  font-size: clamp(
+    45px,
+    5vw,
+    68px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.94;
+
+  letter-spacing: -3px;
+}
+
+
+.tshirt-values-header h2 em {
+  color: #708968;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-weight: 400;
+}
+
+
+.tshirt-values-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  border-top:
+    1px solid
+    rgba(73, 96, 64, 0.14);
+
+  border-bottom:
+    1px solid
+    rgba(73, 96, 64, 0.14);
+}
+
+
+.tshirt-value {
+  min-height: 290px;
+
+  position: relative;
+
+  padding: 35px 30px;
+
+  border-right:
+    1px solid
+    rgba(73, 96, 64, 0.14);
+}
+
+
+.tshirt-value:last-child {
+  border-right: none;
+}
+
+
+.value-number {
+  color: #8ba181;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.value-icon {
+  width: 45px;
+
+  height: 45px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-top: 40px;
+
+  border:
+    1px solid
+    rgba(73, 96, 64, 0.18);
+
+  border-radius: 50%;
+
+  color: #657c5d;
+
+  font-size: 17px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.tshirt-value:hover
+.value-icon {
+  background: #b9cfad;
+
+  transform:
+    rotate(-8deg)
+    scale(1.08);
+}
+
+
+.tshirt-value h3 {
+  margin: 22px 0 10px;
+
+  color: #374333;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+.tshirt-value p {
+  max-width: 230px;
+
+  margin: 0;
+
+  color: #7a8475;
+
+  font-size: 11px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   QUICK VIEW MODAL
+========================================================= */
+
+.tshirt-modal-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 25px;
+
+  background:
+    rgba(31, 40, 28, 0.35);
+
+  backdrop-filter:
+    blur(12px);
+
+  animation:
+    modalBackdropIn
+    0.25s ease;
+}
+
+
+@keyframes modalBackdropIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+.tshirt-modal {
+  width: min(
+    900px,
+    100%
+  );
+
+  max-height: 90vh;
+
+  display: grid;
+
+  grid-template-columns:
+    0.9fr
+    1fr;
+
+  overflow: hidden;
+
+  position: relative;
+
+  background: #f7f7f2;
+
+  box-shadow:
+    0 40px 100px
+      rgba(20, 30, 18, 0.25);
+
+  animation:
+    modalIn
+    0.45s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+@keyframes modalIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+.tshirt-modal-close {
+  width: 40px;
+
+  height: 40px;
+
+  position: absolute;
+
+  top: 15px;
+
+  right: 15px;
+
+  z-index: 5;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(247, 247, 242, 0.9);
+
+  color: #53604d;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.tshirt-modal-close:hover {
+  background: #c9dcbf;
+
+  transform:
+    rotate(90deg);
+}
+
+
+.tshirt-modal-image {
+  min-height: 620px;
+
+  background: #e3e7df;
+}
+
+
+.tshirt-modal-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.tshirt-modal-content {
+  padding: 65px 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+.tshirt-modal-content > span {
+  margin-bottom: 12px;
+
+  color: #7e9278;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.tshirt-modal-content h2 {
+  margin: 0;
+
+  color: #293126;
+
+  font-size: 34px;
+
+  line-height: 1.05;
+
+  font-weight: 500;
+
+  letter-spacing: -1.5px;
+}
+
+
+.modal-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  color: #7b926f;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+.modal-rating small {
+  color: #939b90;
+
+  font-size: 9px;
+
+  letter-spacing: 0;
+}
+
+
+.modal-price {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  color: #33412e;
+
+  font-size: 19px;
+
+  font-weight: 800;
+}
+
+
+.modal-price del {
+  color: #9da29a;
+
+  font-size: 11px;
+
+  font-weight: 400;
+}
+
+
+.tshirt-modal-content > p {
+  margin: 20px 0 30px;
+
+  color: #788276;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   MODAL SIZES
+========================================================= */
+
+.modal-sizes > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #6f7e69;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.modal-sizes > div {
+  display: flex;
+
+  gap: 7px;
+}
+
+
+.modal-sizes button {
+  width: 45px;
+
+  height: 40px;
+
+  border:
+    1px solid
+    rgba(75, 98, 66, 0.16);
+
+  background: transparent;
+
+  color: #566350;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.modal-sizes button:hover {
+  background: #c6d9bc;
+
+  border-color: #a5c096;
+
+  color: #263321;
+}
+
+
+/* =========================================================
+   MODAL CART BUTTON
+========================================================= */
+
+.modal-cart-button {
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 30px;
+
+  padding: 0 20px 0 25px;
+
+  border: none;
+
+  border-radius: 100px;
+
+  background: #9fbd8e;
+
+  color: #1e291b;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.modal-cart-button span:last-child {
+  width: 30px;
+
+  height: 30px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(37, 51, 31, 0.2);
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.modal-cart-button:hover {
+  background: #7f9e70;
+
+  color: #ffffff;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 13px 28px
+      rgba(69, 94, 58, 0.18);
+}
+
+
+.modal-cart-button:hover
+span:last-child {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.tshirt-toast {
+  position: fixed;
+
+  right: 25px;
+
+  bottom: 25px;
+
+  z-index: 10000;
+
+  min-width: 310px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 14px 15px;
+
+  background:
+    rgba(
+      247,
+      247,
+      242,
+      0.96
+    );
+
+  border:
+    1px solid
+    rgba(72, 96, 63, 0.13);
+
+  box-shadow:
+    0 20px 50px
+      rgba(45, 61, 39, 0.16);
+
+  backdrop-filter:
+    blur(15px);
+
+  animation:
+    toastIn
+    0.5s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    ),
+    toastOut
+    0.5s
+    ease
+    3s
+    forwards;
+}
+
+
+@keyframes toastIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes toastOut {
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+}
+
+
+.toast-check {
+  width: 35px;
+
+  height: 35px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #c7dbbd;
+
+  color: #496142;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+.tshirt-toast strong {
+  display: block;
+
+  color: #34402f;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+.tshirt-toast small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #8a9385;
+
+  font-size: 8px;
+}
+
+
+.tshirt-toast > button {
+  margin-left: auto;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8a9385;
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+  .tshirt-container {
+    width:
+      min(
+        100% - 60px,
+        1050px
+      );
+  }
+
+
+  .tshirt-hero-grid {
+    gap: 50px;
+  }
+
+
+  .tshirt-product-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  .tshirt-product-image-wrap {
+    height: 450px;
+  }
+
+
+  .tshirt-values-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .tshirt-value:nth-child(2) {
+    border-right: none;
+  }
+
+
+  .tshirt-value:nth-child(-n + 2) {
+    border-bottom:
+      1px solid
+      rgba(73, 96, 64, 0.14);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .tshirt-container {
+    width:
+      min(
+        calc(100% - 48px),
+        720px
+      );
+  }
+
+
+  .tshirt-hero {
+    min-height: auto;
+
+    padding:
+      100px 0
+      70px;
+  }
+
+
+  .tshirt-breadcrumb {
+    position: static;
+
+    margin-bottom: 35px;
+  }
+
+
+  .tshirt-hero-grid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding-top: 0;
+  }
+
+
+  .tshirt-hero-copy h1 {
+    font-size: 82px;
+  }
+
+
+  .tshirt-hero-image-frame {
+    height: 600px;
+  }
+
+
+  .tshirt-toolbar {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .tshirt-toolbar-right {
+    width: 100%;
+  }
+
+
+  .tshirt-search {
+    flex: 1;
+  }
+
+
+  .tshirt-product-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 42px 18px;
+  }
+
+
+  .editorial-card {
+    grid-template-columns: 1fr;
+  }
+
+
+  .editorial-image {
+    min-height: 500px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .tshirt-container {
+    width:
+      calc(100% - 32px);
+  }
+
+
+  /* HERO */
+
+  .tshirt-hero {
+    padding:
+      35px 0
+      60px;
+  }
+
+
+  .tshirt-hero-grid {
+    gap: 45px;
+  }
+
+
+  .tshirt-hero-copy h1 {
+    font-size: 60px;
+
+    letter-spacing: -4px;
+  }
+
+
+  .tshirt-hero-copy h1 em {
+    letter-spacing: -3px;
+  }
+
+
+  .tshirt-hero-copy > p {
+    font-size: 13px;
+  }
+
+
+  .tshirt-hero-actions {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+
+  .tshirt-hero-stats {
+    gap: 18px;
+
+    margin-top: 45px;
+  }
+
+
+  .tshirt-hero-stats div + div {
+    padding-left: 18px;
+  }
+
+
+  .tshirt-hero-stats strong {
+    font-size: 16px;
+  }
+
+
+  .tshirt-hero-stats span {
+    font-size: 7px;
+  }
+
+
+  .tshirt-hero-image-frame {
+    height: 500px;
+
+    border-radius:
+      150px
+      150px
+      16px
+      16px;
+  }
+
+
+  .tshirt-floating-card {
+    left: 16px;
+
+    bottom: 16px;
+
+    width: 155px;
+
+    padding: 17px;
+  }
+
+
+  .tshirt-floating-card strong {
+    font-size: 19px;
+  }
+
+
+  /* COLLECTION */
+
+  .tshirt-collection {
+    padding:
+      75px 0
+      80px;
+  }
+
+
+  .tshirt-collection-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+  }
+
+
+  .tshirt-collection-header h2 {
+    font-size: 45px;
+
+    letter-spacing: -2px;
+  }
+
+
+  /* TOOLBAR */
+
+  .tshirt-toolbar {
+    display: none;
+  }
+
+
+  .mobile-filter-trigger {
+    width: 100%;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 17px;
+
+    border:
+      1px solid
+      rgba(74, 97, 65, 0.14);
+
+    border-radius: 100px;
+
+    background: #ffffff;
+
+    color: #53614e;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+  }
+
+
+  .mobile-filter-panel {
+    display: block;
+
+    margin-top: 15px;
+
+    padding: 20px;
+
+    background: #edf2e9;
+
+    border-radius: 15px;
+  }
+
+
+  .mobile-filter-title {
+    margin-bottom: 13px;
+
+    color: #718069;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .mobile-filter-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+  }
+
+
+  .mobile-filter-buttons button {
+    min-height: 34px;
+
+    padding: 0 13px;
+
+    border:
+      1px solid
+      rgba(73, 96, 64, 0.12);
+
+    border-radius: 100px;
+
+    background: #f8faf6;
+
+    color: #697466;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    cursor: pointer;
+  }
+
+
+  .mobile-filter-buttons button.active {
+    background: #b9d0ae;
+
+    color: #293a25;
+
+    border-color: #a6c096;
+  }
+
+
+  /* PRODUCTS */
+
+  .tshirt-product-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 40px 10px;
+
+    margin-top: 35px;
+  }
+
+
+  .tshirt-product-image-wrap {
+    height: 280px;
+  }
+
+
+  .tshirt-product-content {
+    padding-top: 14px;
+  }
+
+
+  .tshirt-product-top {
+    display: block;
+  }
+
+
+  .tshirt-product-name {
+    font-size: 11px;
+  }
+
+
+  .tshirt-product-rating {
+    margin-top: 7px;
+  }
+
+
+  .tshirt-product-options {
+    margin-top: 11px;
+  }
+
+
+  .tshirt-color {
+    width: 14px;
+
+    height: 14px;
+  }
+
+
+  .tshirt-color-count {
+    display: none;
+  }
+
+
+  .tshirt-price-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-top: 13px;
+  }
+
+
+  .tshirt-current-price {
+    font-size: 11px;
+  }
+
+
+  .tshirt-old-price {
+    font-size: 9px;
+  }
+
+
+  .tshirt-save {
+    display: none;
+  }
+
+
+  .tshirt-add-button {
+    height: 43px;
+
+    margin-top: 13px;
+
+    padding: 0 13px;
+
+    font-size: 9px;
+  }
+
+
+  .tshirt-add-arrow {
+    width: 23px;
+
+    height: 23px;
+  }
+
+
+  .tshirt-quick-view {
+    display: none;
+  }
+
+
+  .tshirt-product-badge {
+    top: 9px;
+
+    left: 9px;
+
+    padding: 6px 8px;
+
+    font-size: 6px;
+  }
+
+
+  .tshirt-wishlist {
+    width: 34px;
+
+    height: 34px;
+
+    top: 8px;
+
+    right: 8px;
+
+    font-size: 17px;
+  }
+
+
+  /* EDITORIAL */
+
+  .tshirt-editorial {
+    padding-bottom: 80px;
+  }
+
+
+  .editorial-content {
+    padding: 50px 30px;
+  }
+
+
+  .editorial-content h2 {
+    font-size: 47px;
+
+    letter-spacing: -2px;
+  }
+
+
+  .editorial-image {
+    min-height: 380px;
+  }
+
+
+  /* VALUES */
+
+  .tshirt-values {
+    padding: 75px 0;
+  }
+
+
+  .tshirt-values-header h2 {
+    margin-bottom: 45px;
+
+    font-size: 47px;
+  }
+
+
+  .tshirt-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .tshirt-value {
+    min-height: auto;
+
+    padding: 30px 0;
+
+    border-right: none;
+  }
+
+
+  .tshirt-value:nth-child(-n + 3) {
+    border-bottom:
+      1px solid
+      rgba(73, 96, 64, 0.14);
+  }
+
+
+  .tshirt-value:nth-child(2) {
+    border-right: none;
+  }
+
+
+  .tshirt-value p {
+    max-width: 100%;
+  }
+
+
+  /* MODAL */
+
+  .tshirt-modal-backdrop {
+    padding: 15px;
+  }
+
+
+  .tshirt-modal {
+    max-height:
+      calc(100vh - 30px);
+
+    overflow-y: auto;
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .tshirt-modal-image {
+    min-height: 330px;
+
+    height: 330px;
+  }
+
+
+  .tshirt-modal-content {
+    padding: 35px 25px 30px;
+  }
+
+
+  .tshirt-modal-content h2 {
+    font-size: 27px;
+  }
+
+
+  /* TOAST */
+
+  .tshirt-toast {
+    left: 15px;
+
+    right: 15px;
+
+    bottom: 15px;
+
+    min-width: 0;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .tshirt-product-grid {
+    gap: 35px 8px;
+  }
+
+
+  .tshirt-product-image-wrap {
+    height: 250px;
+  }
+
+
+  .tshirt-hero-copy h1 {
+    font-size: 53px;
+  }
+
+
+  .tshirt-hero-stats {
+    gap: 12px;
+  }
+
+
+  .tshirt-hero-stats div + div {
+    padding-left: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tshirt-page *,
+  .tshirt-page *::before,
+  .tshirt-page *::after {
+    animation-duration: 0.01ms !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+}
